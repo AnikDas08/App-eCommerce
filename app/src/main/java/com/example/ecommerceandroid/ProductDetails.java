@@ -106,6 +106,7 @@ public class ProductDetails extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //lkdjfkdjfjdkljkjd
 
         getSupportActionBar().setTitle(name);
 
