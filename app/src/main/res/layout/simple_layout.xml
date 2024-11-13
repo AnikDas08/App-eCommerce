@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:orientation="horizontal"
+    android:background="#E2DFDF"
+    android:layout_weight="5"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_weight="4"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ImageViewId"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="@color/black"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/NameId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/ImageViewId"
+            android:text="My name is Anik"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/ContactId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NameId"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_toRightOf="@id/ImageViewId"
+            android:text="nfkgkf"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/CourseId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ContactId"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/ImageViewId"
+            android:text="dkfdj"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/RollsId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/CourseId"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/ImageViewId"
+            android:text="dkfdj"
+            android:textSize="20sp" />
+
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_weight="1"
+        android:id="@+id/Delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/NameId"
+        android:layout_gravity="center"
+        android:layout_toRightOf="@+id/ContactId"
+        android:src="@drawable/baseline_delete_24" />
+
+
+
+</LinearLayout>
