@@ -3,21 +3,16 @@ package com.example.ecommerceandroid;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
-import com.example.ecommerceandroid.databinding.ActivityMainBinding;
 import com.example.ecommerceandroid.databinding.ActivityProductDetailsBinding;
-import com.example.ecommerceandroid.model.OrderInsert;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 public class ProductDetails extends AppCompatActivity {
     ActivityProductDetailsBinding binding;
@@ -44,9 +39,6 @@ public class ProductDetails extends AppCompatActivity {
         Glide.with(this)
                 .load(image)
                 .into(binding.ProductImage);
-
-        String userName=binding.NameEdit.getText().toString();
-        String userNumber=binding.NumberEdit.getText().toString();
 
         binding.Decrement.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,11 +70,13 @@ public class ProductDetails extends AppCompatActivity {
         });
 
 
+
+
         binding.Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                ProgressDialog dialog=new ProgressDialog(view.getContext());
+                /*ProgressDialog dialog=new ProgressDialog(view.getContext());
                 dialog.setTitle("Uploading");
                 dialog.show();
 
@@ -95,13 +89,15 @@ public class ProductDetails extends AppCompatActivity {
                 OrderInsert order=new OrderInsert(roll,name,course,userName,useremail,userNumber,binding.Quantites.getText().toString(),image,binding.DetailPrice.getText().toString());
                 root.child(roll).setValue(order);
 
-                dialog.dismiss();
+                dialog.dismiss();*/
+
+
 
                 Intent intent=new Intent(ProductDetails.this,OrderActivity.class);
                 intent.putExtra("name",name);
                 intent.putExtra("course",course);
                 intent.putExtra("quantity",binding.Quantites.getText().toString());
-                intent.putExtra("contact",contact);
+                intent.putExtra("contact",binding.DetailPrice.getText().toString());
                 intent.putExtra("image",image);
                 startActivity(intent);
             }
@@ -120,9 +116,9 @@ public class ProductDetails extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.CartId){
+        /*if(item.getItemId()==R.id.CartId){
             startActivity(new Intent(ProductDetails.this,CartActivity.class));
-        }
+        }*/
         return super.onOptionsItemSelected(item);
     }
 

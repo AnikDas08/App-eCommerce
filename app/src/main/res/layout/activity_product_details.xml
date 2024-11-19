@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <EditText
+        <!--<EditText
             android:id="@+id/NameEdit"
             android:hint="User Name"
             android:textColor="@color/black"
@@ -120,7 +120,7 @@
             android:layout_width="match_parent"
             android:textSize="20dp"
             android:inputType="number"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"/>-->
 
         <TextView
             android:textSize="20sp"
@@ -170,6 +170,8 @@
 
 
     </LinearLayout>
+
+
 
     <Button
         android:id="@+id/Button"

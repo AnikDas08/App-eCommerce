@@ -13,15 +13,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EcommerceAndroid"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".OrderActivity"
+            android:name=".ShowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Amount"
             android:exported="false" />
         <activity
             android:name=".CartActivity"
             android:exported="false"
             android:label="Shopping Here"
             android:theme="@style/Base.Theme.EcommerceAndroid.Actionbar" />
+        <activity
+            android:name=".OrderActivity"
+            android:exported="false" />
         <activity
             android:name=".ProductDetails"
             android:exported="false"

@@ -3,6 +3,9 @@ package com.example.ecommerceandroid.model;
 public class OrderShow {
     String course,name,quantity,contact,image;
 
+    public OrderShow() {
+    }
+
     public OrderShow(String course, String name, String quantity, String contact, String image) {
         this.course = course;
         this.name = name;
