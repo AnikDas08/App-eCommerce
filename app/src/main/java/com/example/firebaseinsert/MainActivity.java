@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
         String roll=rollEdit.getText().toString();
         FirebaseStorage storage=FirebaseStorage.getInstance();
-        StorageReference reference=storage.getReference("image "+roll);
+        StorageReference reference=storage.getReference("insert").child("image "+roll);
         reference.putFile(filePath)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
