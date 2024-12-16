@@ -17,28 +17,28 @@
 
     <EditText
         android:id="@+id/RollId"
-        android:hint="Enter Your Roll"
+        android:hint="Enter product Id"
         android:layout_width="match_parent"
         android:textSize="30sp"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/NameEdit"
-        android:hint="Enter Your Name"
+        android:hint="Enter Product Name"
         android:layout_width="match_parent"
         android:textSize="30sp"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/DuarationEdit"
-        android:hint="Enter Your contact"
+        android:hint="Enter Price"
         android:layout_width="match_parent"
         android:textSize="30sp"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/CourseEdit"
-        android:hint="Enter Your Course"
+        android:hint="Enter Description"
         android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
