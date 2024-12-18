@@ -37,8 +37,8 @@ This project includes a comprehensive **e-commerce application** for Android alo
 4. Add your `google-services.json` file for Firebase configuration.
 5. Build and run the application on an emulator or device.
 
-##Contact
-###For further suggestions:
+## Contact
+### For further suggestions:
 *Developer: Anik
 *Email: anikd5656@gmail.com
  
