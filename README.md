@@ -4,7 +4,7 @@ This project includes a comprehensive **e-commerce application** for Android alo
 
 ## Features
 
-### E-Commerce App Features (Main Branch)zz
+### E-Commerce App Features (Main Branch)
 - **User Functionality**
   - Product browsing and detailed views.
   - Quantity adjustment and cart management.
