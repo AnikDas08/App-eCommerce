@@ -2,37 +2,37 @@ package com.example.ecommerceandroid.model;
 
 public class Product {
 
-    String contact;
-    String course;
-    String name;
-    String pimage;
-    String roll;
+    private String price;
+    private String details;
+    private String name;
+    private String pimage;
+    private String roll;
 
     public Product() {
     }
 
-    public Product(String contact, String course, String name, String pimage,String roll) {
-        this.contact = contact;
-        this.course = course;
+    public Product(String price, String details, String name, String pimage,String roll) {
+        this.price = price;
+        this.details = details;
         this.name = name;
         this.pimage = pimage;
         this.roll=roll;
     }
 
-    public String getContact() {
-        return contact;
+    public String getPrice() {
+        return price;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public String getCourse() {
-        return course;
+    public String getDetails() {
+        return details;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
+    public void setDetails(String details) {
+        this.details = details;
     }
 
     public String getName() {

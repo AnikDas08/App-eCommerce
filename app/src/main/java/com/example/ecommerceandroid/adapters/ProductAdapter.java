@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -27,8 +28,8 @@ public class ProductAdapter extends FirebaseRecyclerAdapter<Product,ProductAdapt
     @Override
     protected void onBindViewHolder(@NonNull myViewholder myViewholder, int i, @NonNull Product product) {
         myViewholder.binding.level.setText(product.getName());
-        myViewholder.binding.price.setText("BDT "+product.getContact());
-        myViewholder.binding.details.setText(product.getCourse());
+        myViewholder.binding.price.setText("BDT "+product.getPrice());
+        myViewholder.binding.details.setText(product.getDetails());
         Glide.with(myViewholder.binding.image.getContext())
                 .load(product.getPimage())
                 .into(myViewholder.binding.image);
@@ -37,9 +38,9 @@ public class ProductAdapter extends FirebaseRecyclerAdapter<Product,ProductAdapt
             public void onClick(View view) {
                 Intent intent=new Intent(context, ProductDetails.class);
                 intent.putExtra("name",product.getName());
-                intent.putExtra("course",product.getCourse());
+                intent.putExtra("details",product.getDetails());
                 intent.putExtra("roll",product.getRoll());
-                intent.putExtra("contact",product.getContact());
+                intent.putExtra("price",product.getPrice());
                 intent.putExtra("image",product.getPimage());
                 context.startActivity(intent);
             }

@@ -57,20 +57,20 @@ public class OrderActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         String name=getIntent().getStringExtra("name");
-        String course=getIntent().getStringExtra("course");
+        String details=getIntent().getStringExtra("details");
         String quantity=getIntent().getStringExtra("quantity");
-        String contact=getIntent().getStringExtra("contact");
+        String prices=getIntent().getStringExtra("price");
         String image=getIntent().getStringExtra("image");
-        int price=Integer.parseInt(contact);
+        int price=Integer.parseInt(prices);
 
         binding.NameText.setText(name);
         binding.QuantityText.setText(quantity);
-        binding.DescriptionId.setText(course);
+        binding.DescriptionId.setText(prices);
         Glide.with(this)
                 .load(image)
                 .into(binding.ImageViewId);
-        binding.Price.setText(contact);
-        binding.PriceText.setText(contact);
+        binding.Price.setText(prices);
+        binding.PriceText.setText(prices);
 
 
 
@@ -90,7 +90,7 @@ public class OrderActivity extends AppCompatActivity {
                 payment=view1.findViewById(R.id.Payment);
                 button=view1.findViewById(R.id.ButtonPay);
 
-                payment.setText(contact);
+                payment.setText(prices);
 
 
                 dialog.show();

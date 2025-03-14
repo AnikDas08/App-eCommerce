@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class ProductDetails extends AppCompatActivity {
     ActivityProductDetailsBinding binding;
-    int a=1;
+    int total=1;
     String b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +27,15 @@ public class ProductDetails extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String name=getIntent().getStringExtra("name");
-        String course=getIntent().getStringExtra("course");
+        String details=getIntent().getStringExtra("details");
         String roll=getIntent().getStringExtra("roll");
-        String contact=getIntent().getStringExtra("contact");
-        int price=Integer.parseInt(contact);
+        String prices=getIntent().getStringExtra("price");
+        int price=Integer.parseInt(prices);
         String image=getIntent().getStringExtra("image");
 
         binding.ProductText.setText(name);
-        binding.DetailPrice.setText(contact);
-        binding.ProductDetailwork.setText(course);
+        binding.DetailPrice.setText(prices);
+        binding.ProductDetailwork.setText(details);
         Glide.with(this)
                 .load(image)
                 .into(binding.ProductImage);
@@ -43,15 +43,15 @@ public class ProductDetails extends AppCompatActivity {
         binding.Decrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int c = Integer.parseInt(binding.Quantites.getText().toString());
-                if (c > 1) {
-                    a = c - 1;
-                    binding.DetailPrice.setText(String.format("%d", price * a));
-                    b = String.valueOf(a);
+                int item = Integer.parseInt(binding.Quantites.getText().toString());
+                if (item > 1) {
+                    total = item - 1;
+                    binding.DetailPrice.setText(String.format("%d", price * total));
+                    b = String.valueOf(total);
                     binding.Quantites.setText(b);
                 } else {
-                    a = 1;
-                    b = String.valueOf(a);
+                    total = 1;
+                    b = String.valueOf(total);
                     binding.Quantites.setText(b);
                 }
             }
@@ -60,10 +60,10 @@ public class ProductDetails extends AppCompatActivity {
         binding.Increment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int c=Integer.parseInt(binding.Quantites.getText().toString());
-                a=c+1;
-                binding.DetailPrice.setText(String.format("%d",price * a));
-                b=String.valueOf(a);
+                int item=Integer.parseInt(binding.Quantites.getText().toString());
+                total=item+1;
+                binding.DetailPrice.setText(String.format("%d",price * total));
+                b=String.valueOf(total);
                 binding.Quantites.setText(b);
 
             }
@@ -95,9 +95,9 @@ public class ProductDetails extends AppCompatActivity {
 
                 Intent intent=new Intent(ProductDetails.this,OrderActivity.class);
                 intent.putExtra("name",name);
-                intent.putExtra("course",course);
+                intent.putExtra("details",details);
                 intent.putExtra("quantity",binding.Quantites.getText().toString());
-                intent.putExtra("contact",binding.DetailPrice.getText().toString());
+                intent.putExtra("price",binding.DetailPrice.getText().toString());
                 intent.putExtra("image",image);
                 startActivity(intent);
             }
@@ -126,5 +126,14 @@ public class ProductDetails extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         finish();
         return super.onSupportNavigateUp();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ProductDetails.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+        super.onBackPressed();
     }
 }
